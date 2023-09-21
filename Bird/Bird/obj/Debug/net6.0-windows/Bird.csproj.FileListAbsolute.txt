@@ -36,3 +36,6 @@ C:\Users\user\Desktop\Schule\2DP\2DP_Projekt\Bird\Bird\Bird\obj\Debug\net6.0-win
 C:\Users\user\Desktop\Schule\2DP\2DP_Projekt\Bird\Bird\Bird\obj\Debug\net6.0-windows\Bird.pdb
 C:\Users\user\Desktop\Schule\2DP\2DP_Projekt\Bird\Bird\Bird\obj\Debug\net6.0-windows\Bird.genruntimeconfig.cache
 C:\Users\user\Desktop\Schule\2DP\2DP_Projekt\Bird\Bird\Bird\obj\Debug\net6.0-windows\ref\Bird.dll
+C:\Users\admin\OneDrive - bib & FHDW\Desktop\2DP\Bird\Bird\Bird\obj\Debug\net6.0-windows\Bird.dll
+C:\Users\admin\OneDrive - bib & FHDW\Desktop\2DP\Bird\Bird\Bird\obj\Debug\net6.0-windows\refint\Bird.dll
+C:\Users\admin\OneDrive - bib & FHDW\Desktop\2DP\Bird\Bird\Bird\obj\Debug\net6.0-windows\Bird.pdb
