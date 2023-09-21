@@ -1,6 +1,9 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System.Windows.Forms.VisualStyles;
+using Bib.Bg.Xna2D;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using SharpDX.Direct3D9;
 
 namespace Bird
 {
@@ -8,17 +11,26 @@ namespace Bird
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
+        private Background _screen;
+        private BasicSpriteComponent stage;
+        private Player _player;
 
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
+            Content.RootDirectory = "Content";
+
+            _graphics.PreferredBackBufferWidth = 1200;
+            _graphics.PreferredBackBufferHeight = 800;
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
         }
 
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+            _screen = new Background(this, "screen", "screen");
+            Components.Add(_screen);
+
 
             base.Initialize();
         }
@@ -27,15 +39,17 @@ namespace Bird
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // TODO: use this.Content to load your game content here
+            Texture2D _stage = Content.Load<Texture2D>("stage");
+            stage = new BasicSpriteComponent(this, "stage", _stage);
+            stage.CenterImage();
+            Components.Add(stage);
+            
         }
 
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-
-            // TODO: Add your update logic here
 
             base.Update(gameTime);
         }
@@ -44,7 +58,6 @@ namespace Bird
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
 
             base.Draw(gameTime);
         }
