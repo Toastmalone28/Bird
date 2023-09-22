@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/user/Desktop/Schule/2DP/2DP_Projekt/Bird/Bird/Bird/Content/../../assets/bird.png</File>
+    <File>C:/Users/user/Desktop/Schule/2DP/2DP_Projekt/Bird/Bird/Bird/Content/../../assets/block.png</File>
+    <File>C:/Users/user/Desktop/Schule/2DP/2DP_Projekt/Bird/Bird/Bird/Content/../../assets/screen.png</File>
+    <File>C:/Users/user/Desktop/Schule/2DP/2DP_Projekt/Bird/Bird/Bird/Content/../../assets/stage.png</File>
+  </SourceFiles>
+  <DestFiles>
+    <File>bird.png</File>
+    <File>block.png</File>
+    <File>screen.png</File>
+    <File>stage.png</File>
+  </DestFiles>
+</SourceFileCollection>
