@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/user/Desktop/Schule/2DP/2DP_Projekt/Bird/Bird/Bird/Content/File.spritefont</SourceFile>
-  <SourceTime>2023-09-25T11:07:14.1699588+02:00</SourceTime>
-  <DestFile>C:/Users/user/Desktop/Schule/2DP/2DP_Projekt/Bird/Bird/Bird/Content/bin/Windows/Content/File.xnb</DestFile>
-  <DestTime>2023-09-25T11:07:32.4548766+02:00</DestTime>
+  <SourceFile>C:/Users/JuliusHohmann/Documents/Schule/Bird/Bird/Bird/Bird/Content/File.spritefont</SourceFile>
+  <SourceTime>2023-09-25T15:13:27.6874675+02:00</SourceTime>
+  <DestFile>C:/Users/JuliusHohmann/Documents/Schule/Bird/Bird/Bird/Bird/Content/bin/Windows/Content/File.xnb</DestFile>
+  <DestTime>2023-09-25T15:26:57.6354064+02:00</DestTime>
   <Importer>FontDescriptionImporter</Importer>
   <ImporterTime>2022-07-26T13:44:56+02:00</ImporterTime>
   <Processor>FontDescriptionProcessor</Processor>

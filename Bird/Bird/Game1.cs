@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms.VisualStyles;
+﻿using System;
+using System.Windows.Forms.VisualStyles;
 using Bib.Bg.Xna2D;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -14,8 +15,6 @@ namespace Bird
         private Background _screen;
         private Player _player;
         protected BasicSpriteComponent[] Floor { get; set; }
-        protected bool isFloor;
-
         protected BasicSpriteComponent Stage { get; set; }
 
         public Game1()

@@ -33,7 +33,7 @@ namespace Bird
         public Player(Game game, String name, String imageName, Vector2 startPosition,
                                 Point numberOfImages) : base(game, name, imageName, startPosition)
         {
-            this.NumberOfImages = numberOfImages;
+            NumberOfImages = numberOfImages;
         }
 
         public void Movement(GameTime gameTime)
@@ -46,9 +46,9 @@ namespace Bird
                 if (keyState.IsKeyUp(Keys.Space))
                 {
                     isMoving = true;
-                    this.Position += Left * Speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-                    this.SpriteEffect = SpriteEffects.None;
-                    this.timeTillNextFrame = 50;
+                    Position += Left * Speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+                    SpriteEffect = SpriteEffects.None;
+                    timeTillNextFrame = 50;
                 }
             }
             if (keyState.IsKeyDown(Keys.D) || keyState.IsKeyDown(Keys.Right))
@@ -56,15 +56,17 @@ namespace Bird
                 if(keyState.IsKeyUp(Keys.Space))
                 {
                     isMoving = true;
-                    this.Position += Right * Speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-                    this.SpriteEffect = SpriteEffects.FlipHorizontally;
-                    this.timeTillNextFrame = 50;
+                    Position += Right * Speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+                    SpriteEffect = SpriteEffects.FlipHorizontally;
+                    timeTillNextFrame = 50;
                 }
             }
             if (keyState.IsKeyDown(Keys.Space))
             {
+                MinFrame = 2;
                 isMoving = false;
-                this._Tongue.Extend(gameTime, this);
+                _Tongue.Extend(gameTime, this, _Tongue.TongueLength);
+                _Tongue.TongueLength++;
             }
             else
             {
@@ -81,9 +83,14 @@ namespace Bird
                     Game.Components.Remove(P);
                 }
             }
+            if (keyState.IsKeyUp(Keys.Space))
+            {
+                MinFrame = 0;
+                _Tongue.TongueLength = 0;
+            }
             if (!isMoving)
             {
-                this.timeTillNextFrame = 1000000;
+                timeTillNextFrame = 250;
             }
 
 
@@ -92,23 +99,27 @@ namespace Bird
 
         public void IsFloor(BasicSpriteComponent[] floor)
         {
-            float characterLeftX = this.Position.X;
-            float characterRightX = this.Position.X + this.Bounds.Width;
+            float characterLeftX = Position.X;
+            float characterRightX = Position.X + Bounds.Width;
 
             float floorLeftX = floor[0].Position.X;
             float floorRightX = floor[floor.Length - 1].Position.X + floor[floor.Length - 1].Bounds.Width;
 
             if (characterLeftX <= floorLeftX) 
             { 
-                this.Position = new Vector2(floorLeftX, this.Position.Y);
+                Position = new Vector2(floorLeftX, Position.Y);
             }
             if (characterRightX >= floorRightX)
             {
-                this.Position = new Vector2(floorRightX - this.Bounds.Width, this.Position.Y);
+                Position = new Vector2(floorRightX - Bounds.Width, Position.Y);
             }
 
 
 
+        }
+        public void Destroy()
+        {
+            
         }
     }
 }

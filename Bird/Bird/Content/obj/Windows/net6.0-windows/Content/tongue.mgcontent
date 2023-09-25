@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/user/Desktop/Schule/2DP/2DP_Projekt/Bird/Bird/Bird/Content/../../assets/tongue.png</SourceFile>
-  <SourceTime>2023-09-25T12:44:13.6541374+02:00</SourceTime>
-  <DestFile>C:/Users/user/Desktop/Schule/2DP/2DP_Projekt/Bird/Bird/Bird/Content/bin/Windows/Content/tongue.xnb</DestFile>
-  <DestTime>2023-09-25T12:44:24.6590909+02:00</DestTime>
+  <SourceFile>C:/Users/JuliusHohmann/Documents/Schule/Bird/Bird/Bird/Bird/Content/../../assets/tongue.png</SourceFile>
+  <SourceTime>2023-09-25T15:26:38.7606901+02:00</SourceTime>
+  <DestFile>C:/Users/JuliusHohmann/Documents/Schule/Bird/Bird/Bird/Bird/Content/bin/Windows/Content/tongue.xnb</DestFile>
+  <DestTime>2023-09-25T15:26:57.5660267+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T13:44:56+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

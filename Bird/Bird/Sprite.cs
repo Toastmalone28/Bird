@@ -13,6 +13,7 @@ namespace Bird
         protected float timeTillNextFrame = 250;
         private float timeSinceLastFrame = 0;
         private Vector2 speed = new Vector2(40, 0);
+        public int MinFrame { get; set; }
 
         public Point NumberOfImages
         {
@@ -25,6 +26,7 @@ namespace Bird
                 Clipping = frame;
             }
         }
+        public Point CurrentFrame { get;set; }
 
 
         public Sprite(Game game, String name, String imageName) :
@@ -60,6 +62,10 @@ namespace Bird
                 if (currentFrame.X >= numberOfImages.Y)
                 {
                     currentFrame.X = 0;
+                }
+                if (MinFrame > currentFrame.X)
+                {
+                    currentFrame.X = MinFrame;
                 }
 
                 frame.X = currentFrame.X * frame.Width;
