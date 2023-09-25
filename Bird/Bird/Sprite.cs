@@ -12,7 +12,7 @@ namespace Bird
         private Rectangle frame;
         protected float timeTillNextFrame = 250;
         private float timeSinceLastFrame = 0;
-        private Vector2 speed = new Vector2(40f, 0);
+        private Vector2 speed = new Vector2(40, 0);
 
         public Point NumberOfImages
         {
@@ -57,7 +57,7 @@ namespace Bird
             if (timeSinceLastFrame >= timeTillNextFrame)
             {
                 currentFrame.X++;
-                if (currentFrame.X >= 2)
+                if (currentFrame.X >= numberOfImages.Y)
                 {
                     currentFrame.X = 0;
                 }

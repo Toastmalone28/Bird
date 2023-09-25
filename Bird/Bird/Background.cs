@@ -4,7 +4,7 @@ using System;
 
 namespace Bird
 {
-    internal class Background : BasicSpriteComponent
+    public class Background : BasicSpriteComponent
     {
         public Background(Game game, String name, String imageName) :
                                  base(game, name, imageName)
