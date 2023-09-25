@@ -4,15 +4,19 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/admin/OneDrive - bib &amp; FHDW/Desktop/2DP/Bird/Bird/Bird/Content/../../assets/bird.png</File>
-    <File>C:/Users/admin/OneDrive - bib &amp; FHDW/Desktop/2DP/Bird/Bird/Bird/Content/../../assets/block.png</File>
-    <File>C:/Users/admin/OneDrive - bib &amp; FHDW/Desktop/2DP/Bird/Bird/Bird/Content/../../assets/screen.png</File>
-    <File>C:/Users/admin/OneDrive - bib &amp; FHDW/Desktop/2DP/Bird/Bird/Bird/Content/../../assets/stage.png</File>
+    <File>C:/Users/user/Desktop/Schule/2DP/2DP_Projekt/Bird/Bird/Bird/Content/../../assets/bird.png</File>
+    <File>C:/Users/user/Desktop/Schule/2DP/2DP_Projekt/Bird/Bird/Bird/Content/../../assets/block.png</File>
+    <File>C:/Users/user/Desktop/Schule/2DP/2DP_Projekt/Bird/Bird/Bird/Content/../../assets/screen.png</File>
+    <File>C:/Users/user/Desktop/Schule/2DP/2DP_Projekt/Bird/Bird/Bird/Content/../../assets/stage.png</File>
+    <File>C:/Users/user/Desktop/Schule/2DP/2DP_Projekt/Bird/Bird/Bird/Content/../../assets/tongue.png</File>
+    <File>C:/Users/user/Desktop/Schule/2DP/2DP_Projekt/Bird/Bird/Bird/Content/File.spritefont</File>
   </SourceFiles>
   <DestFiles>
     <File>bird.png</File>
     <File>block.png</File>
     <File>screen.png</File>
     <File>stage.png</File>
+    <File>tongue.png</File>
+    <File xsi:nil="true" />
   </DestFiles>
 </SourceFileCollection>

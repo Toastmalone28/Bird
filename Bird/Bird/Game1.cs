@@ -60,6 +60,10 @@ namespace Bird
                 new Vector2(GraphicsDevice.Viewport.Width / 2, GraphicsDevice.Viewport.Height - 165), new Point(6, 2));
             Components.Add(_player);
 
+            _player._Tongue = new Tongue(this, "tongue", "tongue", _player.Position, new Point(2, 1));
+            Components.Add(_player._Tongue);
+            _player._Tongue.Visible = false;
+
         }
 
         protected override void Update(GameTime gameTime)

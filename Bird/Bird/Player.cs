@@ -13,26 +13,25 @@ using Keyboard = Microsoft.Xna.Framework.Input.Keyboard;
 
 namespace Bird
 {
-    internal class Player : Sprite
+    public class Player : Sprite
     {
+        private bool isMoving = false;
+        private Tongue tongue;
         private float speed = 0.3f;
         public float Speed
         {
             get { return speed; }
             set { speed = value; }
         }
+        public Tongue _Tongue
+        {
+            get { return tongue; }
+            set { tongue = value; }
+        }
 
-        public Player(Game game, string name, string imageName) : base(game, name, imageName)
-        {
-        }
-        public Player(Game game, String name, String imageName, Vector2 startPosition) :
-                            base(game, name, imageName)
-        {
-            this.Position = startPosition;
-        }
 
         public Player(Game game, String name, String imageName, Vector2 startPosition,
-                                Point numberOfImages) : this(game, name, imageName, startPosition)
+                                Point numberOfImages) : base(game, name, imageName, startPosition)
         {
             this.NumberOfImages = numberOfImages;
         }
@@ -41,26 +40,53 @@ namespace Bird
         {
             KeyboardState keyState = Keyboard.GetState();
 
-            bool isMoving = false;
-
+            isMoving = false;
             if (keyState.IsKeyDown(Keys.A) || keyState.IsKeyDown(Keys.Left))
             {
+                if (keyState.IsKeyUp(Keys.Space))
+                {
                     isMoving = true;
                     this.Position += Left * Speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
                     this.SpriteEffect = SpriteEffects.None;
-                    this.timeTillNextFrame = 50;                
+                    this.timeTillNextFrame = 50;
+                }
             }
             if (keyState.IsKeyDown(Keys.D) || keyState.IsKeyDown(Keys.Right))
             {
+                if(keyState.IsKeyUp(Keys.Space))
+                {
                     isMoving = true;
                     this.Position += Right * Speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
                     this.SpriteEffect = SpriteEffects.FlipHorizontally;
-                    this.timeTillNextFrame = 50;                
+                    this.timeTillNextFrame = 50;
+                }
             }
-            if(!isMoving)
+            if (keyState.IsKeyDown(Keys.Space))
             {
-                this.timeTillNextFrame = 250;
+                isMoving = false;
+                this._Tongue.Extend(gameTime, this);
             }
+            else
+            {
+                List<IGameComponent> toDestroy = new List<IGameComponent>();
+                foreach (var P in Game.Components)
+                {
+                    if (P is Tongue t)
+                    {
+                        toDestroy.Add(t);
+                    }
+                }
+                foreach (var P in toDestroy)
+                {
+                    Game.Components.Remove(P);
+                }
+            }
+            if (!isMoving)
+            {
+                this.timeTillNextFrame = 1000000;
+            }
+
+
 
         }
 

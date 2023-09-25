@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/admin/OneDrive - bib &amp; FHDW/Desktop/2DP/Bird/Bird/Bird/Content/../../assets/bird.png</SourceFile>
-  <SourceTime>2023-09-22T11:29:53.8224998+02:00</SourceTime>
-  <DestFile>C:/Users/admin/OneDrive - bib &amp; FHDW/Desktop/2DP/Bird/Bird/Bird/Content/bin/Windows/bird.xnb</DestFile>
-  <DestTime>2023-09-25T11:06:24.6076267+02:00</DestTime>
+  <SourceFile>C:/Users/user/Desktop/Schule/2DP/2DP_Projekt/Bird/Bird/Bird/Content/../../assets/bird.png</SourceFile>
+  <SourceTime>2023-09-25T11:01:09.8008834+02:00</SourceTime>
+  <DestFile>C:/Users/user/Desktop/Schule/2DP/2DP_Projekt/Bird/Bird/Bird/Content/bin/Windows/bird.xnb</DestFile>
+  <DestTime>2023-09-25T12:44:20.6037382+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T17:35:54+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

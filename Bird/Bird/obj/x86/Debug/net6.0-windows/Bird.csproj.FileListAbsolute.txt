@@ -82,3 +82,5 @@ C:\Users\admin\OneDrive - bib & FHDW\Desktop\2DP\Bird\Bird\Bird\bin\x86\Debug\ne
 C:\Users\admin\OneDrive - bib & FHDW\Desktop\2DP\Bird\Bird\Bird\bin\x86\Debug\net6.0-windows\Content\block.xnb
 C:\Users\admin\OneDrive - bib & FHDW\Desktop\2DP\Bird\Bird\Bird\bin\x86\Debug\net6.0-windows\Content\screen.xnb
 C:\Users\admin\OneDrive - bib & FHDW\Desktop\2DP\Bird\Bird\Bird\bin\x86\Debug\net6.0-windows\Content\stage.xnb
+C:\Users\user\Desktop\Schule\2DP\2DP_Projekt\Bird\Bird\Bird\bin\x86\Debug\net6.0-windows\Content\File.xnb
+C:\Users\user\Desktop\Schule\2DP\2DP_Projekt\Bird\Bird\Bird\bin\x86\Debug\net6.0-windows\Content\tongue.xnb
