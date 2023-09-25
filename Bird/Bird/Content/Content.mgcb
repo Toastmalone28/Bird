@@ -61,3 +61,10 @@
 /processorParam:TextureFormat=Color
 /build:../../assets/stage.png;stage.png
 
+#begin File.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:File.spritefont
+
