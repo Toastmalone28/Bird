@@ -8,7 +8,7 @@ namespace Bird
     public class Sprite : BasicSpriteComponent
     {
         private Point numberOfImages;
-        private Point currentFrame = new Point (0,0);
+        private Point currentFrame;
         private Rectangle frame;
         protected float timeTillNextFrame = 250;
         private float timeSinceLastFrame = 0;
@@ -26,7 +26,7 @@ namespace Bird
                 Clipping = frame;
             }
         }
-        public Point CurrentFrame { get;set; }
+        public Point CurrentFrame { get; set; }
 
 
         public Sprite(Game game, String name, String imageName) :

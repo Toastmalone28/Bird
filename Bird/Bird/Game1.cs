@@ -14,8 +14,9 @@ namespace Bird
         private SpriteBatch _spriteBatch;
         private Background _screen;
         private Player _player;
-        protected BasicSpriteComponent[] Floor { get; set; }
-        protected BasicSpriteComponent Stage { get; set; }
+        public BasicSpriteComponent[] Floor { get; set; }
+        public BasicSpriteComponent Stage { get; set; }
+        public Veggie V { get; private set; }
 
         public Game1()
         {
@@ -29,7 +30,7 @@ namespace Bird
         }
 
         protected override void Initialize()
-        {            
+        {
 
             base.Initialize();
         }
@@ -45,13 +46,13 @@ namespace Bird
             Stage = new BasicSpriteComponent(this, "stage", _stage);
             Stage.CenterImage();
             Components.Add(Stage);
-            
+
             Texture2D _block = Content.Load<Texture2D>("block");
             Floor = new Block[_stage.Width / _block.Width];
 
             for (int i = 0; i < Floor.Length; i++)
             {
-                Floor[i] = new Block(this, "block", "block", new Vector2 (Stage.Position.X + (_block.Width * i), _stage.Height));
+                Floor[i] = new Block(this, "block", "block", new Vector2(Stage.Position.X + (_block.Width * i), _stage.Height));
                 Components.Add(Floor[i]);
             }
 
@@ -63,6 +64,10 @@ namespace Bird
             Components.Add(_player._Tongue);
             _player._Tongue.Visible = false;
 
+            V = new Veggie(this, "block", "block", new Vector2(600, -100), new Point(3, 1));
+            Components.Add(V);
+
+
         }
 
         protected override void Update(GameTime gameTime)
@@ -72,6 +77,8 @@ namespace Bird
 
             _player.IsFloor(Floor);
             _player.Movement(gameTime);
+            V.Spawn();
+            V.Move();
 
             base.Update(gameTime);
         }

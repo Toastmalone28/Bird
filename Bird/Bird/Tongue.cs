@@ -9,8 +9,8 @@ namespace Bird
     {
         public int TongueLength { get; set; }
 
-        public Tongue P {  get; set; }
-        public Tongue(Game game, string name, string imageName, Vector2 startPosition, Point numberOfImages) 
+        public Tongue P { get; set; }
+        public Tongue(Game game, string name, string imageName, Vector2 startPosition, Point numberOfImages)
             : base(game, name, imageName, startPosition, numberOfImages)
         {
 
@@ -19,23 +19,19 @@ namespace Bird
         public void Extend(GameTime gameTime, Player player, int tongueLength)
         {
 
-
-
-
-
             if (player.SpriteEffect == SpriteEffects.FlipHorizontally)
             {
-                this.SpriteEffect = SpriteEffects.FlipHorizontally;
-                this.Position = new Vector2(player.Position.X + player.Clipping.Width / 2 * (tongueLength + 1), player.Position.Y - (this.Bounds.Height * tongueLength));
-                P = new Tongue(Game, "tongue", "tongue", this.Position, new Point(2, 1));
+                SpriteEffect = SpriteEffects.FlipHorizontally;
+                Position = new Vector2(player.Position.X + player.Clipping.Width / 2 * (tongueLength + 1), player.Position.Y - (this.Bounds.Height * tongueLength));
+                P = new Tongue(Game, "tongue", "tongue", Position, new Point(2, 1));
                 P.SpriteEffect = SpriteEffects.FlipHorizontally;
                 Game.Components.Add(P);
             }
             else
             {
-                this.SpriteEffect = SpriteEffects.None;
-                this.Position = new Vector2(player.Position.X - Clipping.Width / 2 * (tongueLength + 1), player.Position.Y - (this.Bounds.Height * tongueLength));
-                P = new Tongue(Game, "tongue", "tongue", this.Position, new Point(2, 1));
+                SpriteEffect = SpriteEffects.None;
+                Position = new Vector2(player.Position.X - Clipping.Width / 2 * (tongueLength + 1), player.Position.Y - (this.Bounds.Height * tongueLength));
+                P = new Tongue(Game, "tongue", "tongue", Position, new Point(2, 1));
                 Game.Components.Add(P);
             }
         }

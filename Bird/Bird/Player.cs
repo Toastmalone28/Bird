@@ -53,7 +53,7 @@ namespace Bird
             }
             if (keyState.IsKeyDown(Keys.D) || keyState.IsKeyDown(Keys.Right))
             {
-                if(keyState.IsKeyUp(Keys.Space))
+                if (keyState.IsKeyUp(Keys.Space))
                 {
                     isMoving = true;
                     Position += Right * Speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
@@ -89,12 +89,7 @@ namespace Bird
                 _Tongue.TongueLength = 0;
             }
             if (!isMoving)
-            {
                 timeTillNextFrame = 250;
-            }
-
-
-
         }
 
         public void IsFloor(BasicSpriteComponent[] floor)
@@ -105,8 +100,8 @@ namespace Bird
             float floorLeftX = floor[0].Position.X;
             float floorRightX = floor[floor.Length - 1].Position.X + floor[floor.Length - 1].Bounds.Width;
 
-            if (characterLeftX <= floorLeftX) 
-            { 
+            if (characterLeftX <= floorLeftX)
+            {
                 Position = new Vector2(floorLeftX, Position.Y);
             }
             if (characterRightX >= floorRightX)
@@ -116,10 +111,6 @@ namespace Bird
 
 
 
-        }
-        public void Destroy()
-        {
-            
         }
     }
 }
