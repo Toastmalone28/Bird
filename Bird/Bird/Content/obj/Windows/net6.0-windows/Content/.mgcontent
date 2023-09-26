@@ -11,6 +11,9 @@
     <File>C:/Users/user/Desktop/Schule/2DP/2DP_Projekt/Bird/Bird/Bird/Content/../../assets/stage.png</File>
     <File>C:/Users/user/Desktop/Schule/2DP/2DP_Projekt/Bird/Bird/Bird/Content/../../assets/tongue.png</File>
     <File>C:/Users/user/Desktop/Schule/2DP/2DP_Projekt/Bird/Bird/Bird/Content/../../Music &amp; Sounds/Music/Theme.mp3</File>
+    <File>C:/Users/user/Desktop/Schule/2DP/2DP_Projekt/Bird/Bird/Bird/Content/../../Music &amp; Sounds/Sounds/Bird/die.wav</File>
+    <File>C:/Users/user/Desktop/Schule/2DP/2DP_Projekt/Bird/Bird/Bird/Content/../../Music &amp; Sounds/Sounds/Bird/walk.wav</File>
+    <File>C:/Users/user/Desktop/Schule/2DP/2DP_Projekt/Bird/Bird/Bird/Content/../../Music &amp; Sounds/Sounds/Bird/walk2.wav</File>
     <File>C:/Users/user/Desktop/Schule/2DP/2DP_Projekt/Bird/Bird/Bird/Content/File.spritefont</File>
   </SourceFiles>
   <DestFiles>
@@ -21,6 +24,9 @@
     <File>stage.png</File>
     <File>tongue.png</File>
     <File>Theme.mp3</File>
+    <File>die.wav</File>
+    <File>walk.wav</File>
+    <File>walk2.wav</File>
     <File xsi:nil="true" />
   </DestFiles>
 </SourceFileCollection>

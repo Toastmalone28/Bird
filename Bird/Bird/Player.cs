@@ -8,6 +8,7 @@ using Microsoft.VisualBasic.Devices;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 using SharpDX.Direct3D9;
 using Keyboard = Microsoft.Xna.Framework.Input.Keyboard;
 
@@ -50,6 +51,9 @@ namespace Bird
                         Position += Left * Speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
                         SpriteEffect = SpriteEffects.None;
                         timeTillNextFrame = 50;
+                        ((Game1)Game).Walk1.Play();
+                        ((Game1)Game).Walk2.Play();
+
                     }
                 }
                 if (keyState.IsKeyDown(Keys.D) || keyState.IsKeyDown(Keys.Right))
@@ -60,6 +64,9 @@ namespace Bird
                         Position += Right * Speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
                         SpriteEffect = SpriteEffects.FlipHorizontally;
                         timeTillNextFrame = 50;
+                        ((Game1)Game).Walk1.Play();
+                        ((Game1)Game).Walk2.Play();
+
                     }
                 }
                 if (keyState.IsKeyDown(Keys.Space))

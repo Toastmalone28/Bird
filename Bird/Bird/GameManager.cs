@@ -16,6 +16,7 @@ namespace Bird
         private Game game;
         private int points = 0;
         private GameStates gameState = GameStates.Starting;
+        private bool dead = false;
         #endregion
 
 
@@ -33,6 +34,12 @@ namespace Bird
             instance = this;
             this.game = game;
         }
+        public bool Dead
+        {
+            get { return dead; }
+            set { dead = value; }
+        }
+
 
         public void Score(int p)
         {

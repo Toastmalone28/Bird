@@ -131,3 +131,6 @@ C:\Users\JuliusHohmann\Documents\Schule\Bird\Bird\Bird\Bird\obj\x86\Debug\net6.0
 C:\Users\user\Desktop\Schule\2DP\2DP_Projekt\Bird\Bird\Bird\bin\x86\Debug\net6.0-windows\Content\greenbean.xnb
 C:\Users\user\Desktop\Schule\2DP\2DP_Projekt\Bird\Bird\Bird\bin\x86\Debug\net6.0-windows\Content\Theme.wma
 C:\Users\user\Desktop\Schule\2DP\2DP_Projekt\Bird\Bird\Bird\bin\x86\Debug\net6.0-windows\Content\Theme.xnb
+C:\Users\user\Desktop\Schule\2DP\2DP_Projekt\Bird\Bird\Bird\bin\x86\Debug\net6.0-windows\Content\die.xnb
+C:\Users\user\Desktop\Schule\2DP\2DP_Projekt\Bird\Bird\Bird\bin\x86\Debug\net6.0-windows\Content\walk.xnb
+C:\Users\user\Desktop\Schule\2DP\2DP_Projekt\Bird\Bird\Bird\bin\x86\Debug\net6.0-windows\Content\walk2.xnb

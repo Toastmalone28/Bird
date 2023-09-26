@@ -91,6 +91,24 @@
 /processorParam:Quality=Best
 /build:../../Music & Sounds/Music/Theme.mp3;Theme.mp3
 
+#begin ../../Music & Sounds/Sounds/Bird/die.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:../../Music & Sounds/Sounds/Bird/die.wav;die.wav
+
+#begin ../../Music & Sounds/Sounds/Bird/walk.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:../../Music & Sounds/Sounds/Bird/walk.wav;walk.wav
+
+#begin ../../Music & Sounds/Sounds/Bird/walk2.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:../../Music & Sounds/Sounds/Bird/walk2.wav;walk2.wav
+
 #begin File.spritefont
 /importer:FontDescriptionImporter
 /processor:FontDescriptionProcessor

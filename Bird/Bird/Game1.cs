@@ -3,6 +3,7 @@ using System.Runtime.Intrinsics.Arm;
 using System.Windows.Forms.VisualStyles;
 using Bib.Bg.Xna2D;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
@@ -23,6 +24,10 @@ namespace Bird
         public Veggie V { get; private set; }
         private float spawnRate = 900;
         private float timeSinceSpawn = 0;
+
+        public SoundEffect Walk1;
+        public SoundEffect Walk2;
+        private SoundEffect die;
 
         public Game1()
         {
@@ -47,6 +52,9 @@ namespace Bird
             _gameManager = new GameManager(this);
 
             Song backgroundMusic = Content.Load<Song>("theme");
+            Walk1 = Content.Load<SoundEffect>("walk");
+            Walk2 = Content.Load<SoundEffect>("walk2");
+            die = Content.Load<SoundEffect>("die");
             MediaPlayer.IsRepeating = true;
             MediaPlayer.Volume = 0.5f;
             MediaPlayer.Play(backgroundMusic);
@@ -101,8 +109,14 @@ namespace Bird
                 _gameManager.GameState = GameStates.Over;
             if (_gameManager.GameState == GameStates.Over)
             {
+                if (!_gameManager.Dead)
+                {
+                    _gameManager.Dead = true;
+                    MediaPlayer.Pause();
+                    die.Play();
+                }
                 _player.MinFrame = 4;
-                _player.Position = new (_player.Position.X, _player.Position.Y + 1);
+                _player.Position = new(_player.Position.X, _player.Position.Y + 2);
             }
 
 
