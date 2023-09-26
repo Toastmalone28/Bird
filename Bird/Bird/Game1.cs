@@ -5,6 +5,7 @@ using Bib.Bg.Xna2D;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 using SharpDX.Direct3D9;
 
 namespace Bird
@@ -20,7 +21,7 @@ namespace Bird
         public BasicSpriteComponent[] Floor { get; set; }
         public BasicSpriteComponent Stage { get; set; }
         public Veggie V { get; private set; }
-        private float spawnRate = 1200;
+        private float spawnRate = 900;
         private float timeSinceSpawn = 0;
 
         public Game1()
@@ -44,6 +45,11 @@ namespace Bird
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             _gameManager = new GameManager(this);
+
+            Song backgroundMusic = Content.Load<Song>("theme");
+            MediaPlayer.IsRepeating = true;
+            MediaPlayer.Volume = 0.5f;
+            MediaPlayer.Play(backgroundMusic);
 
             _screen = new Background(this, "screen", "screen");
             Components.Add(_screen);

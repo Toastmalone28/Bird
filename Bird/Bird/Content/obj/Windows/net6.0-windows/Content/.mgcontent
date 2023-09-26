@@ -10,6 +10,7 @@
     <File>C:/Users/user/Desktop/Schule/2DP/2DP_Projekt/Bird/Bird/Bird/Content/../../assets/screen.png</File>
     <File>C:/Users/user/Desktop/Schule/2DP/2DP_Projekt/Bird/Bird/Bird/Content/../../assets/stage.png</File>
     <File>C:/Users/user/Desktop/Schule/2DP/2DP_Projekt/Bird/Bird/Bird/Content/../../assets/tongue.png</File>
+    <File>C:/Users/user/Desktop/Schule/2DP/2DP_Projekt/Bird/Bird/Bird/Content/../../Music &amp; Sounds/Music/Theme.mp3</File>
     <File>C:/Users/user/Desktop/Schule/2DP/2DP_Projekt/Bird/Bird/Bird/Content/File.spritefont</File>
   </SourceFiles>
   <DestFiles>
@@ -19,6 +20,7 @@
     <File>screen.png</File>
     <File>stage.png</File>
     <File>tongue.png</File>
+    <File>Theme.mp3</File>
     <File xsi:nil="true" />
   </DestFiles>
 </SourceFileCollection>
