@@ -14,9 +14,12 @@ namespace Bird
         private SpriteBatch _spriteBatch;
         private Background _screen;
         private Player _player;
+        private GameManager _gameManager;
         public BasicSpriteComponent[] Floor { get; set; }
         public BasicSpriteComponent Stage { get; set; }
         public Veggie V { get; private set; }
+        private float spawnRate = 1500;
+        private float timeSinceSpawn = 0;
 
         public Game1()
         {
@@ -38,6 +41,7 @@ namespace Bird
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
+            _gameManager = new GameManager(this);
 
             _screen = new Background(this, "screen", "screen");
             Components.Add(_screen);
@@ -64,9 +68,10 @@ namespace Bird
             Components.Add(_player._Tongue);
             _player._Tongue.Visible = false;
 
-            V = new Veggie(this, "block", "block", new Vector2(600, -100), new Point(3, 1));
-            Components.Add(V);
+            DisplayPoints dp = new DisplayPoints(this);
+            Components.Add(dp);
 
+            base.LoadContent();
 
         }
 
@@ -77,8 +82,7 @@ namespace Bird
 
             _player.IsFloor(Floor);
             _player.Movement(gameTime);
-            V.Spawn();
-            V.Move();
+            Veggie.Spawn(this, gameTime, ref spawnRate, ref timeSinceSpawn);
 
             base.Update(gameTime);
         }

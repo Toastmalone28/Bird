@@ -128,3 +128,4 @@ C:\Users\JuliusHohmann\Documents\Schule\Bird\Bird\Bird\Bird\obj\x86\Debug\net6.0
 C:\Users\JuliusHohmann\Documents\Schule\Bird\Bird\Bird\Bird\obj\x86\Debug\net6.0-windows\Bird.pdb
 C:\Users\JuliusHohmann\Documents\Schule\Bird\Bird\Bird\Bird\obj\x86\Debug\net6.0-windows\Bird.genruntimeconfig.cache
 C:\Users\JuliusHohmann\Documents\Schule\Bird\Bird\Bird\Bird\obj\x86\Debug\net6.0-windows\ref\Bird.dll
+C:\Users\user\Desktop\Schule\2DP\2DP_Projekt\Bird\Bird\Bird\bin\x86\Debug\net6.0-windows\Content\greenbean.xnb
