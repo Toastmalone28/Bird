@@ -91,6 +91,8 @@ namespace Bird
                 _gameManager.GameState = GameStates.Over;
             if (_gameManager.CollidesWithTongue(this, _player))            
                 _gameManager.Score(100);
+            if (_gameManager.CollidesWithBlock(this, Floor))
+                _gameManager.GameState = GameStates.Over;
             if (_gameManager.GameState == GameStates.Over)
             {
                 _player.MinFrame = 4;

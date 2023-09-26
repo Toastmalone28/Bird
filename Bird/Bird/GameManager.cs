@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Bib.Bg.Xna2D;
 using Microsoft.Xna.Framework;
 
 namespace Bird
@@ -58,6 +59,22 @@ namespace Bird
                     game.Components.Remove(v);
                     return true;
                 }
+            }
+            return false;
+        }
+        public bool CollidesWithBlock(Game game, BasicSpriteComponent[] b)
+        {
+            foreach (var item in Game.Components)
+            {
+                for (int i = 0; i < b.Length; i++)
+                {
+                    if (item is Veggie v && v.Bounds.Intersects(b[i].Bounds))
+                    {
+                        game.Components.Remove(v);
+                        return true;
+                    }
+                }
+
             }
             return false;
         }
