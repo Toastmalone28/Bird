@@ -25,6 +25,7 @@ namespace Bird
             get { return points; }
             set { points = value; }
         }
+        public GameStates GameState { get; set; }
 
         public GameManager(Game game)
         {
@@ -32,9 +33,35 @@ namespace Bird
             this.game = game;
         }
 
-        public void Score()
+        public void Score(int p)
         {
-            Points += 100;
+            Points += p;
         }
+
+        public bool CollidesWithPlayer(Player p)
+        {
+            foreach (var item in Game.Components)
+            {
+                if (item is Veggie v && v.Bounds.Intersects(p.Bounds))
+                {                    
+                    return true;
+                }
+            }
+            return false;
+        }
+        public bool CollidesWithTongue(Game game, Player p)
+        {
+            foreach (var item in Game.Components)
+            {
+                if (item is Veggie v && v.Bounds.Intersects(p._Tongue.Bounds))
+                {
+                    game.Components.Remove(v);
+                    return true;
+                }
+            }
+            return false;
+        }
+
+
     }
 }

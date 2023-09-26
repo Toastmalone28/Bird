@@ -20,7 +20,6 @@ namespace Bird
             font = Game.Content.Load<SpriteFont>("File");
         }
 
-
         protected override void LoadContent()
         {
             //

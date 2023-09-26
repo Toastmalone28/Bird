@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.Intrinsics.Arm;
 using System.Windows.Forms.VisualStyles;
 using Bib.Bg.Xna2D;
 using Microsoft.Xna.Framework;
@@ -15,10 +16,11 @@ namespace Bird
         private Background _screen;
         private Player _player;
         private GameManager _gameManager;
+        private DisplayPoints _displayPoints;
         public BasicSpriteComponent[] Floor { get; set; }
         public BasicSpriteComponent Stage { get; set; }
         public Veggie V { get; private set; }
-        private float spawnRate = 1500;
+        private float spawnRate = 1200;
         private float timeSinceSpawn = 0;
 
         public Game1()
@@ -68,8 +70,10 @@ namespace Bird
             Components.Add(_player._Tongue);
             _player._Tongue.Visible = false;
 
-            DisplayPoints dp = new DisplayPoints(this);
-            Components.Add(dp);
+            _displayPoints = new DisplayPoints(this);
+            Components.Add(_displayPoints);
+
+            _gameManager.GameState = GameStates.Running;
 
             base.LoadContent();
 
@@ -83,6 +87,16 @@ namespace Bird
             _player.IsFloor(Floor);
             _player.Movement(gameTime);
             Veggie.Spawn(this, gameTime, ref spawnRate, ref timeSinceSpawn);
+            if (_gameManager.CollidesWithPlayer(_player))
+                _gameManager.GameState = GameStates.Over;
+            if (_gameManager.CollidesWithTongue(this, _player))            
+                _gameManager.Score(100);
+            if (_gameManager.GameState == GameStates.Over)
+            {
+                _player.MinFrame = 4;
+                _player.Position = new (_player.Position.X, _player.Position.Y + 1);
+            }
+
 
             base.Update(gameTime);
         }

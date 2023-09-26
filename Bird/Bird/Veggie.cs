@@ -38,6 +38,7 @@ namespace Bird
 
         public override void Update(GameTime gameTime)
         {
+            if(GameManager.instance.GameState == GameStates.Running)
             Move(gameTime);
 
             base.Update(gameTime);

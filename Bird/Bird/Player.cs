@@ -39,59 +39,60 @@ namespace Bird
         public void Movement(GameTime gameTime)
         {
             KeyboardState keyState = Keyboard.GetState();
-
             isMoving = false;
-            if (keyState.IsKeyDown(Keys.A) || keyState.IsKeyDown(Keys.Left))
+            if (GameManager.instance.GameState == GameStates.Running)
             {
-                if (keyState.IsKeyUp(Keys.Space))
+                if (keyState.IsKeyDown(Keys.A) || keyState.IsKeyDown(Keys.Left))
                 {
-                    isMoving = true;
-                    Position += Left * Speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-                    SpriteEffect = SpriteEffects.None;
-                    timeTillNextFrame = 50;
-                }
-            }
-            if (keyState.IsKeyDown(Keys.D) || keyState.IsKeyDown(Keys.Right))
-            {
-                if (keyState.IsKeyUp(Keys.Space))
-                {
-                    isMoving = true;
-                    Position += Right * Speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-                    SpriteEffect = SpriteEffects.FlipHorizontally;
-                    timeTillNextFrame = 50;
-                }
-            }
-            if (keyState.IsKeyDown(Keys.Space))
-            {
-                MinFrame = 2;
-                isMoving = false;
-                _Tongue.Extend(gameTime, this, _Tongue.TongueLength);
-                _Tongue.TongueLength++;
-            }
-            else
-            {
-                List<IGameComponent> toDestroy = new List<IGameComponent>();
-                foreach (var P in Game.Components)
-                {
-                    if (P is Tongue t)
+                    if (keyState.IsKeyUp(Keys.Space))
                     {
-                        toDestroy.Add(t);
+                        isMoving = true;
+                        Position += Left * Speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+                        SpriteEffect = SpriteEffects.None;
+                        timeTillNextFrame = 50;
                     }
                 }
-                foreach (var P in toDestroy)
+                if (keyState.IsKeyDown(Keys.D) || keyState.IsKeyDown(Keys.Right))
                 {
-                    Game.Components.Remove(P);
+                    if (keyState.IsKeyUp(Keys.Space))
+                    {
+                        isMoving = true;
+                        Position += Right * Speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+                        SpriteEffect = SpriteEffects.FlipHorizontally;
+                        timeTillNextFrame = 50;
+                    }
                 }
+                if (keyState.IsKeyDown(Keys.Space))
+                {
+                    MinFrame = 2;
+                    isMoving = false;
+                    _Tongue.Extend(gameTime, this, _Tongue.TongueLength);
+                    _Tongue.TongueLength++;
+                }
+                else
+                {
+                    List<IGameComponent> toDestroy = new List<IGameComponent>();
+                    foreach (var P in Game.Components)
+                    {
+                        if (P is Tongue t)
+                        {
+                            toDestroy.Add(t);
+                        }
+                    }
+                    foreach (var P in toDestroy)
+                    {
+                        Game.Components.Remove(P);
+                    }
+                }
+                if (keyState.IsKeyUp(Keys.Space))
+                {
+                    MinFrame = 0;
+                    _Tongue.TongueLength = 0;
+                }
+                if (!isMoving)
+                    timeTillNextFrame = 250;
             }
-            if (keyState.IsKeyUp(Keys.Space))
-            {
-                MinFrame = 0;
-                _Tongue.TongueLength = 0;
-            }
-            if (!isMoving)
-                timeTillNextFrame = 250;
         }
-
         public void IsFloor(BasicSpriteComponent[] floor)
         {
             float characterLeftX = Position.X;
@@ -108,9 +109,10 @@ namespace Bird
             {
                 Position = new Vector2(floorRightX - Bounds.Width, Position.Y);
             }
-
-
-
         }
+
+
+
+
     }
 }
