@@ -73,8 +73,7 @@ namespace Bird
                 {
                     MinFrame = 2;
                     isMoving = false;
-                    _Tongue.Extend(gameTime, this, _Tongue.TongueLength);
-                    _Tongue.TongueLength++;
+                    _Tongue.Extend(gameTime, this);
                 }
                 else
                 {
